@@ -1,4 +1,3 @@
-alert("JavaScript fonctionne !");
 /* =====================================
    JOURNEE - SCRIPT PRINCIPAL
 ===================================== */
