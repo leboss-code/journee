@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JOURNÉE - Organisation personnelle</title>
+
+    <link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#11182b">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- BARRE LATERALE -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                JOURNÉE<span>.</span>
+            </div>
+
+            <p class="menu-title">MENU PRINCIPAL</p>
+
+            <nav>
+                <button class="nav-btn active" data-page="accueil">⌂ Accueil</button>
+                <button class="nav-btn" data-page="taches">☑ Mes tâches</button>
+                <button class="nav-btn" data-page="devoirs">📚 Mes devoirs</button>
+                <button class="nav-btn" data-page="calendrier">▦ Calendrier</button>
+                <button class="nav-btn" data-page="objectifs">◎ Mes objectifs</button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Organise. Accomplis.</p>
+                <p>Profite de ta journée.</p>
+            </div>
+
+        </aside>
+
+        <!-- CONTENU PRINCIPAL -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="welcome">TON ESPACE PERSONNEL</p>
+                    <h1>Bonjour ! 👋</h1>
+                </div>
+
+                <div class="date-display" id="date"></div>
+            </header>
+
+            <!-- ACCUEIL -->
+            <section class="page active" id="accueil">
+
+                <div class="hero">
+                    <p>BIENVENUE SUR JOURNÉE</p>
+                    <h2>Organise ta journée.<br>À ton rythme.</h2>
+                    <p>Chaque petite étape compte.</p>
+                </div>
+
+                <h2 class="section-title">Vue d'ensemble</h2>
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <p>Tâches à faire</p>
+                        <h2 id="total-taches">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Tâches terminées</p>
+                        <h2 id="terminees">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Progression</p>
+                        <h2 id="progression">0%</h2>
+                    </div>
+
+                </div>
+
+                <h2 class="section-title">Mes prochaines tâches</h2>
+
+                <div id="accueil-taches" class="task-list"></div>
+
+            </section>
+
+            <!-- MES TACHES -->
+            <section class="page" id="taches">
+
+                <h2 class="section-title">Mes tâches</h2>
+                <p class="subtitle">N'oublie rien et avance à ton rythme.</p>
+
+                <form id="form-tache" class="add-form">
+
+                    <input type="text" id="nouvelle-tache"
+                    placeholder="Ajouter une nouvelle tâche..." required>
+
+                    <button type="submit">+ Ajouter</button>
+
+                </form>
+
+                <div id="liste-taches" class="task-list"></div>
+
+            </section>
+
+            <!-- MES DEVOIRS -->
+            <section class="page" id="devoirs">
+
+                <h2 class="section-title">Mes devoirs 📚</h2>
+                <p class="subtitle">Garde le contrôle sur ton travail scolaire.</p>
+
+                <form id="form-devoir" class="add-form">
+
+                    <input type="text" id="matiere"
+                    placeholder="Matière et devoir..." required>
+
+                    <input type="date" id="date-devoir" required>
+
+                    <button type="submit">+ Ajouter</button>
+
+                </form>
+
+                <div id="liste-devoirs" class="task-list"></div>
+
+            </section>
+
+            <!-- CALENDRIER -->
+            <section class="page" id="calendrier">
+
+                <h2 class="section-title">Mon calendrier</h2>
+                <p class="subtitle">Retrouve tes événements et tes échéances.</p>
+
+                <div class="calendar-card">
+                    <h2 id="mois-calendrier"></h2>
+                    <div class="calendar-grid" id="jours-calendrier"></div>
+                </div>
+
+            </section>
+
+            <!-- OBJECTIFS -->
+            <section class="page" id="objectifs">
+
+                <h2 class="section-title">Mes objectifs 🎯</h2>
+                <p class="subtitle">Chaque objectif commence par une première étape.</p>
+
+                <form id="form-objectif" class="add-form">
+
+                    <input type="text" id="nouvel-objectif"
+                    placeholder="Mon prochain objectif..." required>
+
+                    <button type="submit">+ Ajouter</button>
+
+                </form>
+
+                <div id="liste-objectifs" class="task-list"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

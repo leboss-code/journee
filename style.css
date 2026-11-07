@@ -1,0 +1,429 @@
+
+/* =================================
+   JOURNEE - DESIGN PRINCIPAL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1020;
+    color: #f1f3fa;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+/* STRUCTURE */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* BARRE LATERALE */
+
+.sidebar {
+    width: 250px;
+    background: #11182b;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    border-right: 1px solid #222c43;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+}
+
+.logo span {
+    color: #9275ff;
+}
+
+.menu-title {
+    font-size: 11px;
+    color: #77819a;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-btn {
+    border: none;
+    background: transparent;
+    color: #aab2c8;
+    padding: 15px;
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: #202a43;
+    color: white;
+}
+
+.nav-btn.active {
+    background: #7357df;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 40px;
+    color: #77819a;
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* CONTENU PRINCIPAL */
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    min-width: 0;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.welcome {
+    color: #9275ff;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+}
+
+.date-display {
+    color: #aab2c8;
+    background: #171f34;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+/* PAGES */
+
+.page {
+    display: none;
+    animation: apparition 0.4s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ACCUEIL */
+
+.hero {
+    background: linear-gradient(120deg, #6048c7, #302a76);
+    padding: 40px;
+    border-radius: 18px;
+    margin-bottom: 35px;
+    min-height: 190px;
+}
+
+.hero p:first-child {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.hero p:last-child {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* TITRES ET STATISTIQUES */
+
+.section-title {
+    font-size: 21px;
+    margin: 30px 0 18px;
+}
+
+.subtitle {
+    color: #8993ab;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.stat-card {
+    background: #151e33;
+    border: 1px solid #26324b;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: #9275ff;
+}
+
+.stat-card p {
+    color: #929db5;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    color: #a48bff;
+}
+
+/* FORMULAIRES */
+
+.add-form {
+    display: flex;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.add-form input {
+    flex: 1;
+    min-width: 0;
+    background: #151e33;
+    border: 1px solid #303c56;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+}
+
+.add-form input:focus {
+    border-color: #9275ff;
+}
+
+.add-form input::placeholder {
+    color: #77819a;
+}
+
+.add-form input[type="date"] {
+    color-scheme: dark;
+}
+
+.add-form button {
+    background: #7357df;
+    color: white;
+    border: none;
+    padding: 0 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-form button:hover {
+    background: #8b72f5;
+}
+
+/* LISTES DE TACHES */
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #151e33;
+    border: 1px solid #26324b;
+    padding: 18px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.task-item:hover {
+    border-color: #7357df;
+}
+
+.task-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #9275ff;
+    cursor: pointer;
+}
+
+.task-item span {
+    flex: 1;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.task-item.completed span {
+    text-decoration: line-through;
+    color: #77819a;
+}
+
+.delete-btn {
+    background: #3a2030;
+    color: #ff819c;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #59283d;
+}
+
+.empty-message {
+    color: #77819a;
+    padding: 20px;
+    text-align: center;
+    background: #151e33;
+    border-radius: 12px;
+}
+
+/* CALENDRIER */
+
+.calendar-card {
+    background: #151e33;
+    border: 1px solid #26324b;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin-top: 25px;
+}
+
+.calendar-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.calendar-day {
+    padding: 13px 5px;
+    background: #202a43;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.calendar-day.today {
+    background: #7357df;
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-day.header {
+    background: transparent;
+    color: #9275ff;
+    font-weight: bold;
+}
+
+/* VERSION TELEPHONE */
+
+@media screen and (max-width: 800px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-btn {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .add-form {
+        flex-direction: column;
+    }
+
+    .add-form button {
+        padding: 14px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
